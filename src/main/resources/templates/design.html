@@ -30,7 +30,7 @@
             <h3>Choose your cheese:</h3>
             <div th:each="ingredient : ${cheese}">
                 <input th:field="*{ingredients}" type="checkbox"
-                       th:value="${ingredient.id}"/>
+                           th:value="${ingredient.id}"/>
                 <span th:text="${ingredient.name}">INGREDIENT</span><br/>
             </div>
         </div>
