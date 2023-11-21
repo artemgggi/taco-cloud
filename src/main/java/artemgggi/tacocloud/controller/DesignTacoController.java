@@ -3,9 +3,11 @@ package artemgggi.tacocloud.controller;
 import artemgggi.tacocloud.model.Ingredient;
 import artemgggi.tacocloud.model.Taco;
 import artemgggi.tacocloud.model.TacoOrder;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 import artemgggi.tacocloud.model.Ingredient.Type;
 
@@ -52,8 +54,12 @@ public class DesignTacoController {
         return "design";
     }
     @PostMapping
-    public String processTaco(Taco taco,
-                              @ModelAttribute TacoOrder tacoOrder) {
+    public String processTaco(
+            @Valid Taco taco, Errors errors,
+            @ModelAttribute TacoOrder tacoOrder) {
+        if (errors.hasErrors()) {
+            return "design";
+        }
         tacoOrder.addTaco(taco);
         log.info("Processing taco: {}", taco);
         return "redirect:/orders/current";

@@ -18,28 +18,44 @@
     <h3>Deliver my taco masterpieces to...</h3>
     <label for="deliveryName">Name: </label>
     <input type="text" th:field="*{deliveryName}"/>
+    <div class="alert alert-warning"
+         th:if="${#fields.hasErrors('deliveryName')}" th:errors="*{deliveryName}"></div>
     <br/>
     <label for="deliveryStreet">Street address: </label>
     <input type="text" th:field="*{deliveryStreet}"/>
+    <div class="alert alert-warning"
+         th:if="${#fields.hasErrors('deliveryStreet')}" th:errors="*{deliveryStreet}"></div>
     <br/>
     <label for="deliveryCity">City: </label>
     <input type="text" th:field="*{deliveryCity}"/>
+    <div class="alert alert-warning"
+         th:if="${#fields.hasErrors('deliveryCity')}" th:errors="*{deliveryCity}"></div>
     <br/>
     <label for="deliveryState">State: </label>
     <input type="text" th:field="*{deliveryState}"/>
+    <div class="alert alert-warning"
+         th:if="${#fields.hasErrors('deliveryState')}" th:errors="*{deliveryState}"></div>
     <br/>
     <label for="deliveryZip">Zip code: </label>
     <input type="text" th:field="*{deliveryZip}"/>
+    <div class="alert alert-warning"
+         th:if="${#fields.hasErrors('deliveryZip')}" th:errors="*{deliveryZip}"></div>
     <br/>
     <h3>Here’s how I’ll pay...</h3>
     <label for="ccNumber">Credit Card #: </label>
     <input type="text" th:field="*{ccNumber}"/>
+    <div class="alert alert-warning"
+         th:if="${#fields.hasErrors('ccNumber')}" th:errors="*{ccNumber}"></div>
     <br/>
     <label for="ccExpiration">Expiration: </label>
     <input type="text" th:field="*{ccExpiration}"/>
+    <div class="alert alert-warning"
+         th:if="${#fields.hasErrors('ccExpiration')}" th:errors="*{ccExpiration}"></div>
     <br/>
     <label for="ccCVV">CVV: </label>
     <input type="text" th:field="*{ccCVV}"/>
+    <div class="alert alert-warning"
+         th:if="${#fields.hasErrors('ccCVV')}" th:errors="*{ccCVV}"></div>
     <br/>
     <input type="submit" value="Submit Order"/>
 </form>
