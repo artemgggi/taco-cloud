@@ -1,6 +1,7 @@
-package artemgggi.tacocloud.repository;
+package artemgggi.tacocloud.repository.oldJdbcRepository;
 
 import artemgggi.tacocloud.model.Ingredient;
+import artemgggi.tacocloud.repository.IngredientRepository;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 

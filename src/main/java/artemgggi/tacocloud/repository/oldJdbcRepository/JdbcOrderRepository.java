@@ -1,8 +1,9 @@
-package artemgggi.tacocloud.repository;
+package artemgggi.tacocloud.repository.oldJdbcRepository;
 
 import artemgggi.tacocloud.model.IngredientRef;
 import artemgggi.tacocloud.model.Taco;
 import artemgggi.tacocloud.model.TacoOrder;
+import artemgggi.tacocloud.repository.OrderRepository;
 import org.springframework.asm.Type;
 import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.jdbc.core.PreparedStatementCreator;
@@ -18,7 +19,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Repository
-public class JdbcOrderRepository implements OrderRepository{
+public class JdbcOrderRepository implements OrderRepository {
 
     private JdbcOperations jdbcOperations;
 
