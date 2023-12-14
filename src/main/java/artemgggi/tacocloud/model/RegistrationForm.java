@@ -13,8 +13,8 @@ public class RegistrationForm {
     private String state;
     private String zip;
     private String phone;
-    public User toUser(PasswordEncoder passwordEncoder) {
-        return new User(
+    public Users toUser(PasswordEncoder passwordEncoder) {
+        return new Users(
                 username, passwordEncoder.encode(password),
                 fullname, street, city, state, zip, phone);
     }
