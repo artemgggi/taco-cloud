@@ -7,13 +7,15 @@ spring:
       enabled: false
 
   security:
-  oauth2:
-  client:
-  registration:
-  facebook:
-  clientId: <facebook client id>
-  clientSecret: <facebook client secret>
-  scope: email, public_profile
+    oauth2:
+      client:
+        registration:
+          facebook:
+            clientId: YOUR_APP_ID
+            clientSecret: YOUR_APP_SECRET
+            scope:
+              - email
+              - public_profile
 
 #spring:
 #  data:
