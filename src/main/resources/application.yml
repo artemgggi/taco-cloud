@@ -6,16 +6,25 @@ spring:
     console:
       enabled: false
 
-  security:
-    oauth2:
-      client:
-        registration:
-          facebook:
-            clientId: YOUR_APP_ID
-            clientSecret: YOUR_APP_SECRET
-            scope:
-              - email
-              - public_profile
+#  logging:
+#        path: /resources/log
+#        file: TacoCloud.log
+#        level:
+#        root: WARN
+#        org:
+#        springframework:
+#        security: DEBUG
+
+#  security:
+#    oauth2:
+#      client:
+#        registration:
+#          facebook:
+#            clientId: YOUR_APP_ID
+#            clientSecret: YOUR_APP_SECRET
+#            scope:
+#              - email
+#              - public_profile
 
 #spring:
 #  data:
