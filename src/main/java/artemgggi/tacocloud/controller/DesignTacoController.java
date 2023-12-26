@@ -36,18 +36,22 @@ public class DesignTacoController {
                     filterByType((List<Ingredient>) ingredients, type));
         }
     }
+
     @ModelAttribute(name = "tacoOrder")
     public TacoOrder order() {
         return new TacoOrder();
     }
+
     @ModelAttribute(name = "taco")
     public Taco taco() {
         return new Taco();
     }
+
     @GetMapping
     public String showDesignForm() {
         return "design";
     }
+
     @PostMapping
     public String processTaco(
             @Valid Taco taco, Errors errors,
