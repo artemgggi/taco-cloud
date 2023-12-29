@@ -19,11 +19,11 @@ import java.util.stream.Collectors;
 @Controller
 @RequestMapping("/design")
 @SessionAttributes("tacoOrder")
-public class DesignTacoController {
+public class TacoController {
 
     private final IngredientRepository ingredientRepo;
 
-    public DesignTacoController(IngredientRepository ingredientRepo) {
+    public TacoController(IngredientRepository ingredientRepo) {
         this.ingredientRepo = ingredientRepo;
     }
 

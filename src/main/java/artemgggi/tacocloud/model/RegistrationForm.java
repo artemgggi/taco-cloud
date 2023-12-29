@@ -7,7 +7,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class RegistrationForm {
     private String username;
     private String password;
-    private String fullname;
+    private String name;
     private String street;
     private String city;
     private String state;
@@ -16,6 +16,6 @@ public class RegistrationForm {
     public Users toUser(PasswordEncoder passwordEncoder) {
         return new Users(
                 username, passwordEncoder.encode(password),
-                fullname, street, city, state, zip, phone);
+                name, phone);
     }
 }
