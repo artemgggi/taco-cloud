@@ -3,12 +3,14 @@ package artemgggi.tacocloud.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
+import org.springframework.data.rest.core.annotation.RestResource;
 
 import java.util.Date;
 import java.util.List;
 
 @Data
 @Entity
+@RestResource(rel="tacos", path="tacos")
 public class Taco {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
