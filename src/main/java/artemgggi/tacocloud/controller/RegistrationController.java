@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/register")
 public class RegistrationController {
-    private UsersRepository userRepo;
-    private PasswordEncoder passwordEncoder;
+    private final UsersRepository userRepo;
+    private final PasswordEncoder passwordEncoder;
 
     public RegistrationController(
             UsersRepository userRepo, PasswordEncoder passwordEncoder) {
