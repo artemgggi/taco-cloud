@@ -10,27 +10,8 @@ spring:
     rest:
       base-path: /data-api
 
-#  logging:
-#        path: /resources/log
-#        file: TacoCloud.log
-#        level:
-#        root: WARN
-#        org:
-#        springframework:
-#        security: DEBUG
-
-#  security:
-#    oauth2:
-#      client:
-#        registration:
-#          facebook:
-#            clientId: YOUR_APP_ID
-#            clientSecret: YOUR_APP_SECRET
-#            scope:
-#              - email
-#              - public_profile
-#    data:
-#      cassandra:
-#        keyspace-name: taco_cloud
-#        schema-action: recreate
-#        local-datacenter: datacenter1
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:9000/oauth2/jwks

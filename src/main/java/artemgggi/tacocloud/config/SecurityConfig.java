@@ -4,6 +4,7 @@ import artemgggi.tacocloud.model.Users;
 import artemgggi.tacocloud.repository.UsersRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -34,6 +35,10 @@ public class SecurityConfig {
                 .authorizeHttpRequests((requests) -> requests
                         .requestMatchers("/design","/orders").hasRole("USER")
                         .requestMatchers("/", "/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/ingredients")
+                        .hasAuthority("SCOPE_writeIngredients")
+                        .requestMatchers(HttpMethod.DELETE, "/api/ingredients")
+                        .hasAuthority("SCOPE_deleteIngredients")
                         .anyRequest().authenticated()
                 )
                 .formLogin((form) -> form
