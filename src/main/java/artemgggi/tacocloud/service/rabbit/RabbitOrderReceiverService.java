@@ -5,9 +5,9 @@ import artemgggi.tacocloud.service.OrderReceiverService;
 import jakarta.jms.JMSException;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-@Service
+@Component
 public class RabbitOrderReceiverService implements OrderReceiverService {
 
     private final RabbitTemplate rabbit;

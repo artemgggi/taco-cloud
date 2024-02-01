@@ -3,7 +3,7 @@ package artemgggi.tacocloud.controller;
 import artemgggi.tacocloud.model.TacoOrder;
 import artemgggi.tacocloud.model.Users;
 import artemgggi.tacocloud.repository.OrderRepository;
-import artemgggi.tacocloud.service.OrderMassagingService;
+import artemgggi.tacocloud.service.OrderMessagingService;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -22,11 +22,11 @@ import org.springframework.web.bind.support.SessionStatus;
 public class OrderController {
 
     private final OrderRepository orderRepository;
-    private final OrderMassagingService messagingService;
+    private final OrderMessagingService messagingService;
 
     public OrderController(
             OrderRepository orderRepository,
-            OrderMassagingService messagingService) {
+            OrderMessagingService messagingService) {
         this.orderRepository = orderRepository;
         this.messagingService = messagingService;
     }

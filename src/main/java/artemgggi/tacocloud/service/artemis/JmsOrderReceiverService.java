@@ -4,9 +4,9 @@ import artemgggi.tacocloud.model.TacoOrder;
 import artemgggi.tacocloud.service.OrderReceiverService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsTemplate;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-@Service
+@Component
 public class JmsOrderReceiverService implements OrderReceiverService {
 
     private final JmsTemplate jms;

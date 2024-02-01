@@ -1,7 +1,7 @@
 package artemgggi.tacocloud.service.rabbit;
 
 import artemgggi.tacocloud.model.TacoOrder;
-import artemgggi.tacocloud.service.OrderMassagingService;
+import artemgggi.tacocloud.service.OrderMessagingService;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageProperties;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class RabbitOrderMessagingService implements OrderMassagingService {
+public class RabbitOrderMessagingService implements OrderMessagingService {
 
     private final RabbitTemplate rabbit;
 

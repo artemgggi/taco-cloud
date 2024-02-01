@@ -2,7 +2,7 @@ package artemgggi.tacocloud.service;
 
 import artemgggi.tacocloud.model.TacoOrder;
 
-public interface OrderMassagingService {
+public interface OrderMessagingService {
 
     void sendOrder(TacoOrder tacoOrder);
 }
