@@ -35,7 +35,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/design", "/orders").hasRole("USER")
+//                        .requestMatchers("/design", "/orders").hasRole("USER")
                         .requestMatchers("/", "/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/ingredients")
                         .hasAuthority("SCOPE_writeIngredients")

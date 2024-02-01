@@ -6,11 +6,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @Data
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor(force = true)
-public class IngredientRef {
+public class IngredientRef implements Serializable {
     @Id
     private final String id;
     private final String ingredient;
