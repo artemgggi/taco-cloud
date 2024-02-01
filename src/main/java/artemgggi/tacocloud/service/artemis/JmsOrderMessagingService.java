@@ -1,6 +1,7 @@
-package artemgggi.tacocloud.service;
+package artemgggi.tacocloud.service.artemis;
 
 import artemgggi.tacocloud.model.TacoOrder;
+import artemgggi.tacocloud.service.OrderMassagingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Service;
@@ -14,11 +15,6 @@ public class JmsOrderMessagingService implements OrderMassagingService {
     public JmsOrderMessagingService(JmsTemplate jms) {
         this.jms = jms;
     }
-
-//    @Override
-//    public void sendOrder(TacoOrder tacoOrder) {
-//        jms.send(session -> session.createObjectMessage(tacoOrder));
-//    }
 
     @Override
     public void sendOrder(TacoOrder tacoOrder) {
