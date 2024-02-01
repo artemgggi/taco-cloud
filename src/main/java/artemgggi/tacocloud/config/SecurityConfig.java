@@ -24,7 +24,9 @@ public class SecurityConfig {
     public UserDetailsService userDetailsService(UsersRepository userRepository) {
         return username -> {
             Users user = userRepository.findByUsername(username);
-            if (user != null) return user;
+            if (user != null) {
+                return user;
+            }
             throw new UsernameNotFoundException("User ‘" + username + "’ not found");
         };
     }
@@ -33,7 +35,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/design","/orders").hasRole("USER")
+                        .requestMatchers("/design", "/orders").hasRole("USER")
                         .requestMatchers("/", "/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/ingredients")
                         .hasAuthority("SCOPE_writeIngredients")

@@ -12,20 +12,19 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.io.Serial;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
 @Entity
 @Data
-@NoArgsConstructor( force=true)
+@NoArgsConstructor(force = true)
 @RequiredArgsConstructor
 public class Users implements UserDetails {
 
     @Serial
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private final String username;
     private final String password;

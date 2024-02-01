@@ -24,11 +24,8 @@ public class WebConfig implements WebMvcConfigurer {
     }
 
     @Bean
-    public CommandLineRunner dataLoader(
-            IngredientRepository repo,
-            UsersRepository userRepo,
-            PasswordEncoder encoder,
-            TacoRepository tacoRepo) {
+    public CommandLineRunner dataLoader(IngredientRepository repo, UsersRepository userRepo,
+                                        PasswordEncoder encoder, TacoRepository tacoRepo) {
         return args -> {
             Ingredient flourTortilla = new Ingredient(
                     "FLTO", "Flour Tortilla", Type.WRAP);
@@ -46,10 +43,6 @@ public class WebConfig implements WebMvcConfigurer {
                     "CHED", "Cheddar", Type.CHEESE);
             Ingredient jack = new Ingredient(
                     "JACK", "Monterrey Jack", Type.CHEESE);
-            Ingredient salsa = new Ingredient(
-                    "SLSA", "Salsa", Type.SAUCE);
-            Ingredient sourCream = new Ingredient(
-                    "SRCR", "Sour Cream", Type.SAUCE);
             repo.save(flourTortilla);
             repo.save(cornTortilla);
             repo.save(groundBeef);
@@ -58,19 +51,13 @@ public class WebConfig implements WebMvcConfigurer {
             repo.save(lettuce);
             repo.save(cheddar);
             repo.save(jack);
-            repo.save(salsa);
-            repo.save(sourCream);
             Taco taco1 = new Taco();
             taco1.setName("Carnivore");
-            taco1.setIngredients(Arrays.asList(
-                    flourTortilla, groundBeef, carnitas,
-                    sourCream, salsa, cheddar));
+            taco1.setIngredients(Arrays.asList(flourTortilla, groundBeef, carnitas, cheddar));
             tacoRepo.save(taco1);
             Taco taco2 = new Taco();
             taco2.setName("Bovine Bounty");
-            taco2.setIngredients(Arrays.asList(
-                    cornTortilla, groundBeef, cheddar,
-                    jack, sourCream));
+            taco2.setIngredients(Arrays.asList(cornTortilla, groundBeef, cheddar, jack));
             tacoRepo.save(taco2);
         };
     }

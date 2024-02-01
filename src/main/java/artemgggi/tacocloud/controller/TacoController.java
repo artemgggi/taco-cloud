@@ -63,6 +63,7 @@ public class TacoController {
         log.info("Processing taco: {}", taco);
         return "redirect:/orders/current";
     }
+
     private Iterable<Ingredient> filterByType(
             List<Ingredient> ingredients, Type type) {
         return ingredients

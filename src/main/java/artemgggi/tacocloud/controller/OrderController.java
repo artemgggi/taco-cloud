@@ -1,6 +1,7 @@
 package artemgggi.tacocloud.controller;
 
 import artemgggi.tacocloud.model.TacoOrder;
+import artemgggi.tacocloud.model.Users;
 import artemgggi.tacocloud.repository.OrderRepository;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
@@ -12,7 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
-import artemgggi.tacocloud.model.Users;
 
 @Slf4j
 @Controller
