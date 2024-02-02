@@ -20,7 +20,16 @@ spring:
 #      template:
 #        default-destination: tacocloud.order.queue
 
-  rabbitmq:
+#  rabbitmq:
+#    template:
+#      exchange: tacocloud.order
+#      routing-key: kitchens.central
+
+  kafka:
+    bootstrap-servers:
+    - localhost:9092
     template:
-      exchange: tacocloud.order
-      routing-key: kitchens.central
+      default-topic: TestTopic
+    producer:
+      bootstrap-servers: localhost:9092, localhost:9093, localhost:9094
+      value-serializer: org.apache.kafka.common.serialization.ByteArraySerializer

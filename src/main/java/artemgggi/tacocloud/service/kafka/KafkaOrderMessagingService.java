@@ -19,6 +19,6 @@ public class KafkaOrderMessagingService implements OrderMessagingService {
 
     @Override
     public void sendOrder(TacoOrder order) {
-        kafkaTemplate.send("tacocloud.orders.topic", order);
+        kafkaTemplate.sendDefault(order);
     }
 }
