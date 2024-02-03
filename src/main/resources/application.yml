@@ -33,3 +33,10 @@ spring:
     producer:
       bootstrap-servers: localhost:9092, localhost:9093, localhost:9094
       value-serializer: org.apache.kafka.common.serialization.ByteArraySerializer
+
+  management:
+    endpoints:
+      web:
+        exposure:
+            include: ‘*’
+            exclude: threaddump,heapdump
