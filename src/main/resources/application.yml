@@ -1,11 +1,12 @@
 spring:
+  application:
+    name: taco-cloud
   datasource:
     generate-unique-name: false
     name: tacocloud
   h2:
     console:
       enabled: false
-
   data:
     rest:
       base-path: /data-api
@@ -31,12 +32,23 @@ spring:
     template:
       default-topic: TestTopic
     producer:
-      bootstrap-servers: localhost:9092, localhost:9093, localhost:9094
-      value-serializer: org.apache.kafka.common.serialization.ByteArraySerializer
+      bootstrap-servers: localhost:9092
 
-  management:
-    endpoints:
-      web:
-        exposure:
-            include: ‘*’
-            exclude: threaddump,heapdump
+  boot:
+    admin:
+      client:
+        url: http://localhost:9090
+        username: admin
+        password: password
+  jmx:
+    enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
